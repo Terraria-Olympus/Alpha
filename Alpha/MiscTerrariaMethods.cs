@@ -18,9 +18,9 @@ namespace Alpha
         }
 
         private static readonly Regex sacrificeFileSplitRegex = new("\r\n|\r|\n");
-        public static Dictionary<int, int> LoadSacrificeCountsNeededByItemIdFromFile()
+        public static int[] LoadSacrificeCountsNeededByItemIdFromFile()
         {
-            Dictionary<int, int> ret = new();
+            int[] ret = new int[ItemID.Count];
             string[] array = sacrificeFileSplitRegex.Split(Resource.Sacrifices.GetText());
 
             foreach (string line in array)
@@ -34,8 +34,8 @@ namespace Alpha
                     string category = parts[1].ToLower();
                     int? amount = LoadSacrificeCountsNeededByItemIdFromFile_ParseCategory(category);
 
-                    if (!ret.ContainsKey(itemId) && amount != null)
-                        ret.Add(itemId, amount.Value);
+                    if (amount != null)
+                        ret[itemId] = amount.Value;
                 }
             }
 

@@ -7,12 +7,9 @@ namespace Alpha.Test
     {
         public static void Main(string[] args)
         {
-            Dictionary<int, int> sacs = MiscTerrariaMethods.LoadSacrificeCountsNeededByItemIdFromFile();
-            for (int i = 0; i < sacs.Count; i++)
-            {
-                if (!sacs.ContainsKey(i))
-                    continue;
-                
+            int[] sacs = MiscTerrariaMethods.LoadSacrificeCountsNeededByItemIdFromFile();
+            for (int i = 0; i < sacs.Length; i++)
+            {                
                 Console.WriteLine($"{i}: {sacs[i]}");
             }
         }
