@@ -2,15 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <Authors>pbone</Authors>
+    <DebugType>none</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Resources\Content\Items.json" />
+    <None Remove="Resources\Content\JourneyCategories.json" />
     <None Remove="Resources\Content\Sacrifices.tsv" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Resources\Content\Items.json" />
+    <EmbeddedResource Include="Resources\Content\JourneyCategories.json" />
     <EmbeddedResource Include="Resources\Content\Sacrifices.tsv" />
   </ItemGroup>
 

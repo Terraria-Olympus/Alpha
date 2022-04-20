@@ -6,6 +6,7 @@ namespace Alpha.Resources
     {
         public static readonly Resource Sacrifices = new(true, "Alpha.Resources.Content.Sacrifices.tsv");
         public static readonly Resource ItemNames = new(true, "Alpha.Resources.Content.Items.json");
+        public static readonly Resource JourneyCategories = new(true, "Alpha.Resources.Content.JourneyCategories.json");
 
         public bool ManifestResource;
         public string ResourcePath;
