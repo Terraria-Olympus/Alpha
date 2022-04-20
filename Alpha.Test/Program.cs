@@ -13,7 +13,7 @@ namespace Alpha.Test
 JourneyAmounts:
             {
                 Console.WriteLine("Testing journey research amounts...");
-                int[] sacs = JourneyHelpers.LoadSacrificeCountsNeededByItemIdFromFile();
+                int[] sacs = JourneyHelper.LoadSacrificeCountsNeededByItemIdFromFile();
                 for (int i = 0; i < sacs.Length; i++)
                     Console.WriteLine($"{i}: {sacs[i]}");
             }
@@ -29,7 +29,7 @@ JourneyCategories:
             {
                 Console.WriteLine("Testing item name getting...");
                 for (int i = 0; i < ItemID.Count; i++)
-                    foreach (KeyValuePair<string, bool> kvp in JourneyHelpers.GetJourneyCategoriesForItem(i))
+                    foreach (KeyValuePair<string, bool> kvp in JourneyHelper.GetJourneyCategoriesForItem(i))
                         Console.WriteLine($"[{i}] {kvp.Key}: {kvp.Value}");
             }
         }

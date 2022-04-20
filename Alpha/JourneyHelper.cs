@@ -7,7 +7,7 @@ using System.Text.RegularExpressions;
 
 namespace Alpha
 {
-    public static class JourneyHelpers
+    public static class JourneyHelper
     {
         private static readonly Regex sacrificeFileSplitRegex = new("\r\n|\r|\n");
         public static int[] LoadSacrificeCountsNeededByItemIdFromFile()
