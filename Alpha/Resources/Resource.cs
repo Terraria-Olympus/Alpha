@@ -4,7 +4,7 @@ namespace Alpha.Resources
 {
     public struct Resource
     {
-        public static readonly Resource Sacrifices = new(true, Path.Combine("Resources", "Content", "Sacrifices.tsv"));
+        public static readonly Resource Sacrifices = new(true, "Alpha.Resources.Content.Sacrifices.tsv");
 
         public bool ManifestResource;
         public string ResourcePath;
@@ -20,6 +20,8 @@ namespace Alpha.Resources
 
         public readonly string GetText()
         {
+            string[] n = GetType().Assembly.GetManifestResourceNames();
+            
             using Stream stream = GetFileStream();
             using StreamReader reader = new(stream);
                 
