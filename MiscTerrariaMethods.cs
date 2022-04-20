@@ -1,4 +1,5 @@
 ﻿using Alpha.ID;
+using Alpha.Resources;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -17,10 +18,10 @@ namespace Alpha
         }
 
         private static readonly Regex sacrificeFileSplitRegex = new("\r\n|\r|\n");
-        public static Dictionary<int, int> LoadSacrificeCountsNeededByItemIdFromFile(string path)
+        public static Dictionary<int, int> LoadSacrificeCountsNeededByItemIdFromFile()
         {
             Dictionary<int, int> ret = new();
-            string[] array = sacrificeFileSplitRegex.Split(File.ReadAllText(path));
+            string[] array = sacrificeFileSplitRegex.Split(Resource.Sacrifices.GetText());
 
             foreach (string line in array)
             {
