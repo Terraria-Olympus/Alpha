@@ -1,5 +1,6 @@
 ﻿using Alpha.ID;
 using Alpha.Resources;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -62,6 +63,18 @@ namespace Alpha
                 "o" => 400,
                 _ => throw new Exception("Category " + category + " uknown."),
             };
+        }
+
+        private static Dictionary<string, string> itemNames;
+        public static string GetItemName(int id) => GetItemName(ItemID.Search.GetName(id));
+        public static string GetItemName(string internalName)
+        {
+            if (itemNames == null)
+                itemNames = JsonConvert.DeserializeObject<Dictionary<string, string>>(Resource.ItemNames.GetText());
+
+            if (itemNames.TryGetValue(internalName, out string name))
+                return name;
+            return internalName;
         }
     }
 }

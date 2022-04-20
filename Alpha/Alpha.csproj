@@ -5,14 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Content\Items.json" />
     <None Remove="Resources\Content\Sacrifices.tsv" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\Content\Items.json" />
     <EmbeddedResource Include="Resources\Content\Sacrifices.tsv" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.1" />
   </ItemGroup>
 
